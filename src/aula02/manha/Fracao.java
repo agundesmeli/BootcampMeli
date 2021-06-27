@@ -62,6 +62,7 @@ public class Fracao {
         this.denominador = this.denominador*num;
     }
 
+
     @Override
     public String toString() {
         return numerador + "/" + denominador;

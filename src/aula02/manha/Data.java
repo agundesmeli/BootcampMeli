@@ -46,9 +46,9 @@ public class Data {
         String hoje = formatter.format(new Date());
         if (formatter.format(this.data).equals(hoje)) {
             System.out.println("A data está correta");
-        } else {
-            System.out.println("A data não está correta");
+            return;
         }
+        System.out.println("A data não está correta");
     }
 
     @Override
