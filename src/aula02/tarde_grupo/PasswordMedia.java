@@ -1,11 +1,11 @@
-package aula02.tarde;
+package aula02.tarde_grupo;
 
-public class PasswordForte extends Password {
+public class PasswordMedia extends Password {
 
     private String pattern;
 
-    public PasswordForte() {
-        this.pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{10,}";
+    public PasswordMedia() {
+        this.pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
     }
 
     @Override

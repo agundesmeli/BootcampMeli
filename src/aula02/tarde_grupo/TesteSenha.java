@@ -1,4 +1,4 @@
-package aula02.tarde;
+package aula02.tarde_grupo;
 
 public class TesteSenha {
 

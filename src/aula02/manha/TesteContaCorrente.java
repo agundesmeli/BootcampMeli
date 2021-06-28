@@ -11,13 +11,13 @@ public class TesteContaCorrente {
         System.out.println(contaCorrente2);
         System.out.println(contaCorrente3);
 
-        contaCorrente1.Deposito(2000);
+        contaCorrente1.deposito(2000);
         System.out.println(contaCorrente1);
 
-        contaCorrente2.Saque(500);
+        contaCorrente2.saque(500);
         System.out.println(contaCorrente2);
 
-        contaCorrente3.Transferencia(100, contaCorrente2);
+        contaCorrente3.transferencia(100, contaCorrente2);
         System.out.println(contaCorrente3);
         System.out.println(contaCorrente2);
     }
