@@ -9,12 +9,12 @@ public class PasswordMedia extends Password {
     }
 
     @Override
-    public void setPassword(String password) {
+    public void setPassword(String password) throws Exception {
         if (password.matches(this.pattern)) {
             this.password = password;
             return;
         }
-        throw new RuntimeException("A senha não é compatível.");
+        throw new Exception("A senha não é compatível.");
     }
 
 }

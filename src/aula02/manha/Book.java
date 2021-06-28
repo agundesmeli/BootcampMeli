@@ -6,6 +6,7 @@ public class Book {
     private String isbn;
     private String autor;
     private String genero;
+    private String status;
 
     public Book() {}
 
@@ -14,6 +15,7 @@ public class Book {
         this.isbn = isbn;
         this.autor = autor;
         this.genero = genero;
+        this.status = "Disponível";
     }
 
     public String getTitulo() {
@@ -49,11 +51,20 @@ public class Book {
     }
 
     public void Emprestimo() {
-        System.out.println("O livro foi emprestado");
+        if (this.status.equalsIgnoreCase("Disponível")) {
+            this.status = "Emprestado";
+            System.out.println("Livro emprestado");
+            return;
+        }
+        System.out.println("O livro já foi emprestado e não está disponível");
     }
 
     public void Devolver() {
-        System.out.println("O livro foi devolvido");
+        if (this.status.equalsIgnoreCase("Emprestado")) {
+            this.status = "Disponível";
+            System.out.println("Livro entregue");
+            return;
+        }
     }
 
     @Override

@@ -44,6 +44,31 @@ public class ContaCorrente {
         this.saldo = saldo;
     }
 
+    public void Deposito(double valor) {
+        this.saldo+=valor;
+    }
+
+    public void Saque(double valor) {
+        if (this.saldo - valor > 0) {
+            this.saldo-=valor;
+            return;
+        }
+        System.out.println("Não há saldo suficiente para realizar o saque.");
+    }
+
+    public void Devolucao(double valor) {
+        this.saldo+=valor;
+    }
+
+    public void Transferencia(double valor, ContaCorrente contaDestino) {
+        if (this.saldo - valor > 0) {
+            this.saldo-=valor;
+            contaDestino.saldo+=valor;
+            return;
+        }
+        System.out.println("Não há saldo suficiente para realizar a transferência.");
+    }
+
     @Override
     public String toString() {
         return "ContaCorrente{" +

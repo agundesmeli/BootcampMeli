@@ -29,6 +29,7 @@ public class Fracao {
     public void Adicionar(int num, int den) {
         this.numerador = (this.numerador*den)+(num*this.denominador);
         this.denominador = this.denominador*den;
+
     }
 
     public void Adicionar(int num) {
