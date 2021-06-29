@@ -50,7 +50,7 @@ public class Book {
         this.genero = genero;
     }
 
-    public void Emprestimo() {
+    public void emprestimo() {
         if (this.status.equalsIgnoreCase("Disponível")) {
             this.status = "Emprestado";
             System.out.println("Livro emprestado");
@@ -59,7 +59,7 @@ public class Book {
         System.out.println("O livro já foi emprestado e não está disponível");
     }
 
-    public void Devolver() {
+    public void devolver() {
         if (this.status.equalsIgnoreCase("Emprestado")) {
             this.status = "Disponível";
             System.out.println("Livro entregue");
