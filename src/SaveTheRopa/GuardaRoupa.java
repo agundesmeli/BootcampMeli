@@ -2,61 +2,40 @@ package SaveTheRopa;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GuardaRoupa {
 
-    private int id;
-    private HashMap<Integer, List<Vestuario>> roupas;
+    private static Integer id = 0;
+    private static Map<Integer, List<Vestuario>> roupas = new HashMap<>();
 
-    public GuardaRoupa(int id, HashMap<Integer, List<Vestuario>> roupas) {
-        this.id = id;
-        this.roupas = roupas;
-    }
+    public GuardaRoupa() {}
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public HashMap<Integer, List<Vestuario>> getRoupas() {
-        return roupas;
-    }
-
-    public void setRoupas(HashMap<Integer, List<Vestuario>> roupas) {
-        this.roupas = roupas;
-    }
 
     public Integer guardarVestuarios(List<Vestuario> listaDeVestuario) {
-        for(Integer key : this.roupas.keySet()){
-            if(listaDeVestuario.equals(this.roupas.get(key))) {
-                return key;
-            }
-        }
-        return null;
+        this.id = this.id + 1;
+        this.roupas.put(this.id, listaDeVestuario);
+        System.out.println("Seu id é: " + this.id);
+        return this.id;
     }
 
     public void mostrarVestuarios() {
-        System.out.println("Guarda-Roupa " + id + " possui os itens: " + "\n");
+        System.out.println("Guarda-Roupa possui os itens: " + "\n");
         for(Integer key : this.roupas.keySet()){
             System.out.println(key + " - " + this.roupas.get(key));
         }
     }
 
     public List<Vestuario> devolverVestuarios(Integer id) {
-        for(Integer key : this.roupas.keySet()){
-            if(id == key) {
-                return this.roupas.get(id);
-            }
+        if (this.roupas.containsKey(id)) {
+            List<Vestuario> roupasRetiradas = this.roupas.remove(id);
+            return roupasRetiradas;
         }
         return null;
     }
 
     @Override
     public String toString() {
-        return "ID do Guarda-Roupa: " + id + "\n" +
-                "Lista de Pertences: " + roupas;
+        return "Lista de Pertences: " + roupas;
     }
 }
